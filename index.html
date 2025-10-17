@@ -42,9 +42,6 @@
 <body>
     <h1>웹페이지 주소 목록</h1>
     <div class="url-list">
-        <!-- 임시 테스트 버튼 -->
-        <button id="shuffleBtn" style="margin-bottom: 20px; padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer;">00시 테스트 (목록 섞기)</button>
-
         <div class="url-item">
             <a href="https://etf-lime.vercel.app" class="url-link" target="_blank">https://etf-lime.vercel.app</a>
         </div>
@@ -144,12 +141,7 @@
         }
 
         // 페이지 로드 시 타이머 시작 (섞기는 00시에만)
-        document.addEventListener('DOMContentLoaded', () => {
-            scheduleShuffle();
-
-            // 임시 테스트 버튼 이벤트 리스너
-            document.getElementById('shuffleBtn').addEventListener('click', shuffleUrls);
-        });
+        document.addEventListener('DOMContentLoaded', scheduleShuffle);
     </script>
 </body>
 </html>
