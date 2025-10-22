@@ -108,6 +108,9 @@
         <div class="url-item">
             <a href="https://gemmini.vercel.app/" class="url-link" target="_blank">https://gemmini.vercel.app/</a>
         </div>
+        <div class="url-item">
+            <a href="https://endword.vercel.app/" class="url-link" target="_blank">https://endword.vercel.app/</a>
+        </div>
     </div>
 
     <script>
@@ -135,8 +138,8 @@
             // 다음 자정까지 대기 후 섞기 실행 (페이지 로드 시에는 섞지 않음)
             setTimeout(() => {
                 shuffleUrls();
-                // 매일 00시에 반복 실행
-                setInterval(shuffleUrls, 24 * 60 * 60 * 1000);
+                // 다음 날 00시를 위해 다시 스케줄링
+                scheduleShuffle();
             }, timeUntilMidnight);
         }
 
