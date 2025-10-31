@@ -111,40 +111,10 @@
         <div class="url-item">
             <a href="https://endword.vercel.app/" class="url-link" target="_blank">https://endword.vercel.app/</a>
         </div>
+        <div class="url-item">
+            <a href="https://jeiljjw.github.io/QR/" class="url-link" target="_blank">https://jeiljjw.github.io/QR/</a>
+        </div>
     </div>
 
-    <script>
-        // URL 목록을 랜덤으로 섞는 함수
-        function shuffleUrls() {
-            const urlList = document.querySelector('.url-list');
-            const urlItems = Array.from(urlList.children);
-
-            // Fisher-Yates shuffle 알고리즘
-            for (let i = urlItems.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [urlItems[i], urlItems[j]] = [urlItems[j], urlItems[i]];
-            }
-
-            // 섞인 순서로 다시 추가
-            urlItems.forEach(item => urlList.appendChild(item));
-        }
-
-        // 00시마다 자동으로 섞기 실행
-        function scheduleShuffle() {
-            const now = new Date();
-            const nextMidnight = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, 0, 0, 0, 0);
-            const timeUntilMidnight = nextMidnight - now;
-
-            // 다음 자정까지 대기 후 섞기 실행 (페이지 로드 시에는 섞지 않음)
-            setTimeout(() => {
-                shuffleUrls();
-                // 다음 날 00시를 위해 다시 스케줄링
-                scheduleShuffle();
-            }, timeUntilMidnight);
-        }
-
-        // 페이지 로드 시 타이머 시작 (섞기는 00시에만)
-        document.addEventListener('DOMContentLoaded', scheduleShuffle);
-    </script>
 </body>
 </html>
