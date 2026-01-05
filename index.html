@@ -134,6 +134,21 @@
        </div>
    </div>
 
+   <script>
+       function shuffleArray(array) {
+           for (let i = array.length - 1; i > 0; i--) {
+               const j = Math.floor(Math.random() * (i + 1));
+               [array[i], array[j]] = [array[j], array[i]];
+           }
+       }
+
+       document.addEventListener('DOMContentLoaded', function() {
+           const urlList = document.getElementById('urlList');
+           const items = Array.from(urlList.children);
+           shuffleArray(items);
+           items.forEach(item => urlList.appendChild(item));
+       });
+   </script>
+
 </body>
 </html>
-
